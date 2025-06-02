@@ -1,0 +1,162 @@
+:root {
+	--avatar-max-width: min(180px, 100%);
+
+	/* Fonts */
+	--font-family: Georgia, serif;
+	--font-family-header: Georgia, serif;
+	--font-family-list: Georgia, serif;
+
+	/* Colours */
+	--color-background: #000000;
+	--color-text-main: #FFFFFF;
+	--color-text-links: #000000;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: var(--font-family);
+	color: var(--color-text-main);
+	background-color: var(--color-background);
+	hyphens: auto;
+}
+
+main {
+	inline-size: min(35rem, 100%);
+	margin-inline: auto;
+}
+
+main > div {
+	margin-block: clamp(0px, calc(-5px + 100vw - 100%), 80px);
+	padding: min(20px, 5%);
+	outline: 2px solid;
+	box-shadow: 8px 8px 0 0;
+	border-radius: max(0px, min(24px, calc((100vw - 16px - 100%) * 9999))) max(0px, min(24px, calc((100vw - 16px - 100%) * 9999))) 0 0 / 24px 24px 0 0;
+}
+
+img {
+	display: block;
+	margin-inline: auto;
+	margin-block-end: 0.5rem;
+	max-inline-size: var(--avatar-max-width);
+	aspect-ratio: 1;
+}
+
+/* Typography */
+h1 {
+	margin: 0;
+	margin-block-end: 16px;
+	font-family: var(--font-family-header);
+	font-weight: normal;
+	font-size: min(2rem, 15vw);
+	line-height: 1.1;
+	color: var(--color-text-main);
+	text-transform: uppercase;
+}
+
+p {
+	margin: 0;
+	margin-block-end: 48px;
+	line-height: 1.5 !important;
+	font-size: 1rem;
+}
+
+h1, p {
+	text-align: center;
+}
+
+a:where(:link, :visited) {
+	text-decoration: none;
+	color: var(--color-text-links);
+	transition: background 0.2s linear;
+}
+
+ul {
+	margin-inline: 0;
+	margin-block: 8px 40px;
+	padding: 0;
+	list-style: none;
+}
+
+ul > li {
+	line-height: 1.5;
+	font-family: var(--font-family-list);
+	margin-block: min(16px, 10%);
+	margin-inline: auto;
+	font-size: 0.9em;
+	border-radius: 5px;
+}
+
+ul li a {
+	font-size: 1.125rem;
+	padding-block: min(24px, 10%);
+	padding-inline: min(24px, 10%) min(32px, 10%);
+	border-radius: 8px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	transition: 0.2s;
+	paint-order: stroke fill;
+}
+
+ul li:nth-child(even) a {
+	background-color: #e25903;
+	-webkit-text-stroke: 4px #e25903;
+}
+
+ul li:nth-child(odd) a {
+	background-color: #ff8100;
+	-webkit-text-stroke: 4px #ff8100;
+}
+
+ul li:hover a {
+	transform: translateY(-2px);
+}
+
+ul li:active a {
+	transform: translateY(0);
+}
+
+.madeby a {
+	color: var(--color-text-main);
+}
+
+.madeby svg {
+	block-size: 1em;
+	transform: translateY(0.25em);
+}
+
+@font-face {
+	font-family: "Whirlybats";
+	font-style: normal;
+	font-weight: 400;
+	src: url("https://ursaminor.xyz/hosted/1711052e-ea5e-4036-9c61-dd3ef6782855_WhirlybatsGX.ttf") format("truetype");
+}
+
+.wb-icon {
+	font-family: "Whirlybats";
+	font-weight: normal;
+	font-style: normal;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	font-feature-settings: "liga";
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 2.1875rem;
+}
+
+a .wb-icon {
+	font-variation-settings: "anim" 100;
+	transition: 0.5s;
+}
+
+a:is(:hover, :focus-visible) .wb-icon {
+	font-variation-settings: "anim" 200;
+}

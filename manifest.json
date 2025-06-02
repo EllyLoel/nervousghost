@@ -1,0 +1,16 @@
+{
+  "name": "nervous ghost glitch in bio",
+  "short_name": "nervous ghost",
+  "description": "Your very own link-in-bio app!",
+  "icons": [
+    {
+      "src": "https://cdn.glitch.me/e09c54fe-6d24-48ee-9536-43c8aa617a54%2Fnervousghost.jpeg?v=1638602912213",
+      "type": "image/jpeg",
+      "sizes": "400x400"
+    }
+  ],
+  "display": "standalone",
+  "background_color": "#D7F5EF",
+  "theme_color": "#9480FF",
+  "start_url": "/"
+}
