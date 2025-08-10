@@ -1,8 +1,7 @@
 _schema: _schema
 source: /
-paths:
-  uploads: uploads
-  static: ''
+editor:
+  default_path:
 timezone: Australia/Melbourne
 markdown:
   engine: commonmark
