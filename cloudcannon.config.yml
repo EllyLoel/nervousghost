@@ -25,7 +25,27 @@ collections_config:
     sort:
     sort_options:
     _editables:
+      text:
+        allow_custom_markup: true
+        remove_custom_markup: false
+        bold:
+        copyformatting:
+        italic:
+        link:
+        paths:
+        redo:
+        removeformat:
+        strike:
+        subscript:
+        superscript:
+        underline:
+        undo:
+      link:
+        paths:
     _enabled_editors:
+      - visual
+      - content
+      - data
     _inputs:
     _select_data:
     _structures:
