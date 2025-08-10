@@ -1,15 +1,28 @@
 :root {
-	--avatar-max-width: min(180px, 100%);
-
-	/* Fonts */
-	--font-family: Georgia, serif;
-	--font-family-header: Georgia, serif;
-	--font-family-list: Georgia, serif;
+	--avatar-max-width: min(250px, 100%);
 
 	/* Colours */
-	--color-background: #000000;
-	--color-text-main: #FFFFFF;
-	--color-text-links: #000000;
+	--color-light: oklch(98.25% 0.01988794174276855 86.85811737991833);
+	--color-dark: oklch(22.07% 0.004475599777112882 348.1218310117916);
+	--color-red: oklch(63.75% 0.2245357598293643 33.275974108251944);
+	--color-pink: oklch(82.14% 0.11539515438796936 352.6887130339132);
+	--color-yellow: oklch(84.17% 0.17127740055202392 85.3065551263548);
+	--color-green: oklch(56.53% 0.1295197312239926 157.93229832475777);
+	--color-blue: oklch(56.61% 0.2256801697041262 262.0716416718167);
+
+	--color-background: var(--color-light);
+	--color-text: var(--color-dark);
+	--color-links: var(--color-background);
+
+	--link-1: var(--color-red);
+	--link-2: var(--color-pink);
+	--link-3: var(--color-yellow);
+	--link-4: var(--color-green);
+	--link-5: var(--color-blue);
+	--link-6: var(--color-dark);
+
+	font-family: "Fredoka", sans-serif;
+	font-weight: 500;
 }
 
 * {
@@ -19,8 +32,8 @@
 body {
 	margin: 0;
 	font-family: var(--font-family);
-	color: var(--color-text-main);
-	background-color: var(--color-background);
+	color: var(--color-text);
+	background: var(--color-text);
 	hyphens: auto;
 }
 
@@ -31,10 +44,11 @@ main {
 
 main > div {
 	margin-block: clamp(0px, calc(-5px + 100vw - 100%), 80px);
-	padding: min(20px, 5%);
+	padding: min(50px, 5%);
 	outline: 2px solid;
-	box-shadow: 8px 8px 0 0;
+	box-shadow: 8px 8px 0 0 var(--color-background);
 	border-radius: max(0px, min(24px, calc((100vw - 16px - 100%) * 9999))) max(0px, min(24px, calc((100vw - 16px - 100%) * 9999))) 0 0 / 24px 24px 0 0;
+	background: var(--color-background);
 }
 
 img {
@@ -53,7 +67,6 @@ h1 {
 	font-weight: normal;
 	font-size: min(2rem, 15vw);
 	line-height: 1.1;
-	color: var(--color-text-main);
 	text-transform: uppercase;
 }
 
@@ -68,9 +81,14 @@ h1, p {
 	text-align: center;
 }
 
+main > p {
+	font-size: 1.5rem;
+	color: var(--color-background);
+}
+
 a:where(:link, :visited) {
 	text-decoration: none;
-	color: var(--color-text-links);
+	color: var(--color-links);
 	transition: background 0.2s linear;
 }
 
@@ -84,7 +102,7 @@ ul {
 ul > li {
 	line-height: 1.5;
 	font-family: var(--font-family-list);
-	margin-block: min(16px, 10%);
+	margin-block: min(32px, 10%);
 	margin-inline: auto;
 	font-size: 0.9em;
 	border-radius: 5px;
@@ -101,16 +119,30 @@ ul li a {
 	justify-content: space-between;
 	transition: 0.2s;
 	paint-order: stroke fill;
+	background: var(--color-dark);
 }
 
-ul li:nth-child(even) a {
-	background-color: #e25903;
-	-webkit-text-stroke: 4px #e25903;
+ul li a svg {
+	--size: 2em;
+	inline-size: var(--size);
+	block-size: var(--size);
+	fill: currentColor;
 }
 
-ul li:nth-child(odd) a {
-	background-color: #ff8100;
-	-webkit-text-stroke: 4px #ff8100;
+ul li:nth-child(6n + 1) a svg {
+	color: var(--link-1);
+}
+ul li:nth-child(6n + 2) a svg {
+	color: var(--link-2);
+}
+ul li:nth-child(6n + 3) a svg {
+	color: var(--link-3);
+}
+ul li:nth-child(6n + 4) a svg {
+	color: var(--link-4);
+}
+ul li:nth-child(6n + 5) a svg {
+	color: var(--link-5);
 }
 
 ul li:hover a {
@@ -122,41 +154,10 @@ ul li:active a {
 }
 
 .madeby a {
-	color: var(--color-text-main);
+	color: var(--color-text);
 }
 
 .madeby svg {
 	block-size: 1em;
 	transform: translateY(0.25em);
-}
-
-@font-face {
-	font-family: "Whirlybats";
-	font-style: normal;
-	font-weight: 400;
-	src: url("https://ursaminor.xyz/hosted/1711052e-ea5e-4036-9c61-dd3ef6782855_WhirlybatsGX.ttf") format("truetype");
-}
-
-.wb-icon {
-	font-family: "Whirlybats";
-	font-weight: normal;
-	font-style: normal;
-	display: inline-block;
-	white-space: nowrap;
-	word-wrap: normal;
-	direction: ltr;
-	font-feature-settings: "liga";
-	-webkit-font-smoothing: antialiased;
-	text-rendering: optimizeLegibility;
-	-moz-osx-font-smoothing: grayscale;
-	font-size: 2.1875rem;
-}
-
-a .wb-icon {
-	font-variation-settings: "anim" 100;
-	transition: 0.5s;
-}
-
-a:is(:hover, :focus-visible) .wb-icon {
-	font-variation-settings: "anim" 200;
 }
