@@ -8,6 +8,35 @@ paths:
   dam_uploads:
   dam_uploads_filename:
   dam_static:
+collections_config:
+  pages:
+    path: /
+    glob:
+      - '*.html'
+    name:
+    singular_name:
+    icon: notes
+    url:
+    disable_url: false
+    include_developer_files:
+    documentation:
+    description: ''
+    preview:
+    sort:
+    sort_options:
+    _editables:
+    _enabled_editors:
+    _inputs:
+    _select_data:
+    _structures:
+    add_options:
+    create:
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+    new_preview_url:
+    schemas:
+    schema_key:
 _enabled_editors:
   - visual
   - content
