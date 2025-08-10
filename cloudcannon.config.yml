@@ -1,9 +1,36 @@
 _schema: _schema
 source: /
-editor:
-  default_path:
-timezone: Australia/Melbourne
 _enabled_editors:
   - visual
   - content
   - data
+_editables:
+  text:
+    allow_custom_markup: true
+    remove_custom_markup: false
+    bold:
+    copyformatting:
+    italic:
+    link:
+    paths:
+    redo:
+    removeformat:
+    strike:
+    subscript:
+    superscript:
+    underline:
+    undo: false
+  link:
+    paths:
+      uploads:
+      uploads_filename:
+      uploads_use_relative_path:
+      static:
+      dam_uploads:
+      dam_uploads_filename:
+      dam_static:
+source_editor:
+  tab_size: 2
+  theme: dracula
+  show_gutter: true
+timezone: Australia/Melbourne
